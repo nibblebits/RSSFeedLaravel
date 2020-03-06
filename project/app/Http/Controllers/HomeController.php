@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\News;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Redirect;
@@ -30,6 +31,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home.index');
+        $news = News::all();
+
+        return view('home.index', ['news' => $news]);
     }
 }
