@@ -36,13 +36,9 @@ class ChangePasswordController extends Controller
 
     public function store(ChangePasswordRequest $request)
     {        
-        request()->validate([
-            'password' => 'required|min:8|confirmed',
-        ]);
-
         Auth::user()->changePassword($request->password);
 
-        return Redirect::to("edit")->withSuccess('Password was updated')->withInput();
+        return back()->withSuccess('Password was changed')->withInput();
 
     }
 }

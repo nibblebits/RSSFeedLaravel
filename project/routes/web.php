@@ -32,7 +32,7 @@ Route::post('/password/change', 'Auth\ChangePasswordController@store');
 // Administrator
 Route::get('/users', 'Backend\Administrator\UsersController@index');
 Route::get('/user/{user}', 'Backend\Administrator\UsersController@view');
-Route::get('/user/{user}/change_password', 'Auth\ChangePassword@change_password');
+Route::get('/user/{user}/change_password', 'Backend\Administrator\UsersController@change_password');
 Route::post('/user/{user}/change_password', 'Backend\Administrator\UsersController@change_password_submit');
 Route::post('/user/{user}/ban', 'Backend\Administrator\UsersController@ban_user');
 Route::post('/user/{user}/unban', 'Backend\Administrator\UsersController@unban_user');

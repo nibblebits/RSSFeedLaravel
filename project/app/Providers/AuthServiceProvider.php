@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('change-user-password', function ($user) {
+            return $user->account_type == 'admin';
+        });
+
+    
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminChangePasswordRequest;
 use App\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Hash;
@@ -54,12 +55,12 @@ class UsersController extends Controller
 
     public function change_password(User $user)
     {
-        return view('dbackend.admin.user.change_password', compact('user'));
+        return view('backend.admin.user.change_password', compact('user'));
     }
 
-    public function change_password_submit(User $user, Request $request)
+    public function change_password_submit(User $user, AdminChangePasswordRequest $request)
     {
-        User::find($user->id)->update(['password'=> Hash::make($request->new_password)]);
+        User::find($user->id)->changePassword($request->new_password);
         return Redirect::to("user/" . $user->id)->withSuccess('Password updated')->withInput();
 
     }

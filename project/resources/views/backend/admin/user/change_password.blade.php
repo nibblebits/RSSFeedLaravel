@@ -40,6 +40,8 @@
                 <div class="form-group">
                   <label>New Password</label>
                   <input type="password" class="form-control" name="new_password" />
+                  <p class="text-danger">{{$errors->first('new_password')}}</p>
+
                   <br />
                   <input type="submit" class="btn btn-primary" value="Change Password" />
                 </div>
