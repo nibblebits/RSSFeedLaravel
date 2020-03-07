@@ -1,5 +1,5 @@
 @section('title', 'Users')
-@include('dashboard/include/header')
+@include('backend/include/header')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -59,7 +59,6 @@
                     <tr>
                       <th>Name</th>
                       <th>Account Type</th>
-                      <th>Picture</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -67,7 +66,6 @@
                     <tr>
                       <td><a href="{{url('user/' . $user->id)}}">{{$user->name}}</a></td>
                       <td>{{$user->account_type}}</td>
-                      <td><img src="{{$user->getProfilePictureUrl()}}" width=200/></td>
                     </tr>
                   @endforeach
                    
@@ -90,4 +88,4 @@
 <!-- /.content -->
 </div>
 
-@include('dashboard/include/footer')
+@include('backend/include/footer')

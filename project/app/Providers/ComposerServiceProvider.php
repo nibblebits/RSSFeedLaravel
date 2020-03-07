@@ -23,13 +23,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(
-            'dashboard.technician.*',
-            'App\Http\ViewComposers\Technician\DashboardComposer'
-        );
 
         view()->composer(
-            'dashboard.*',
+            'backend.*',
             'App\Http\ViewComposers\DashboardComposer'
         );
     }

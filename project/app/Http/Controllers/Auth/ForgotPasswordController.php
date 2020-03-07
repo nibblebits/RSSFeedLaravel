@@ -22,7 +22,7 @@ class ForgotPasswordController extends Controller
 
     public function index()
     {
-        return view('password/reset');
+        return view('backend.password.reset');
     }
 
     public function submit(\Illuminate\Http\Request $request)

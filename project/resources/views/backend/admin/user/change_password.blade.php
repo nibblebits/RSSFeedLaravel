@@ -1,5 +1,5 @@
 @section('title', $user->name . '\'s Profile')
-@include('dashboard/include/header')
+@include('backend/include/header')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -55,4 +55,4 @@
   <!-- /.content -->
 </div>
 
-@include('dashboard/include/footer')
+@include('backend/include/footer')

@@ -40,6 +40,6 @@ class LoginController extends Controller
 
     public function index()
     {
-        return view('dashboard/login');
+        return view('backend/login');
     }
 }

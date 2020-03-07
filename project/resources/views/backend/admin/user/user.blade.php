@@ -1,5 +1,5 @@
 @section('title', $user->name . '\'s Profile')
-@include('dashboard/include/header')
+@include('backend/include/header')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -43,7 +43,6 @@
 
           <div class="row">
             <div class="col-md-2">
-              <img src="{{$user->getProfilePictureUrl()}}" class="img-thumbnail" />
             </div>
             <div class="col-md-10">
               {{$user->about_me}}
@@ -98,4 +97,4 @@
   <!-- /.content -->
 </div>
 
-@include('dashboard/include/footer')
+@include('backend/include/footer')
