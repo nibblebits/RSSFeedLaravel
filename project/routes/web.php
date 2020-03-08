@@ -15,6 +15,11 @@
 // Home controller
 Route::get('/', 'HomeController@index');
 
+// The backend 
+Route::get('/account', 'Backend\HomeController@index');
+Route::get('/account/dashboard', 'Backend\HomeController@dashboard');
+Route::get('/account/edit', 'Backend\EditAccountController@index');
+Route::post('/account/edit', 'Backend\EditAccountController@store');
 
 // Login Controller
 Route::get('login', 'Auth\LoginController@index')->name('login');
@@ -26,8 +31,8 @@ Route::post('forgot', 'Auth\ForgotPasswordController@submit');
 
 
 // Password Controller
-Route::get('/password/change', 'Auth\ChangePasswordController@index');
-Route::post('/password/change', 'Auth\ChangePasswordController@store');
+Route::get('/account/password/change', 'Auth\ChangePasswordController@index');
+Route::post('/account/password/change', 'Auth\ChangePasswordController@store');
 
 // Administrator
 Route::get('/users', 'Backend\Administrator\UsersController@index');

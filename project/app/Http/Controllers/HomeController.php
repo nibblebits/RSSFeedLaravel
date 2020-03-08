@@ -24,6 +24,6 @@ class HomeController extends Controller
     {
         $news = News::all();
 
-        return view('home.index', ['news' => $news]);
+        return view('frontend.index', ['news' => $news]);
     }
 }

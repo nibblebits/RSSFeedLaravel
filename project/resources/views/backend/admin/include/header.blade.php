@@ -30,6 +30,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
 
+  
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -178,8 +179,16 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="{{url('/account/dashboard')}}" class="nav-link {{ request()->is('account/dashboard') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Dashboard</p>
+                  </a>
+                </li>
+
                 <li class="nav-item">
-                  <a href="{{url('/edit')}}" class="nav-link {{ request()->is('edit') ? 'active' : '' }}">
+                  <a href="{{url('/account/edit')}}" class="nav-link {{ request()->is('account/edit') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Edit Profile</p>
                   </a>
@@ -193,14 +202,14 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="{{url('/change_password')}}" class="nav-link ">
+                  <a href="{{url('/account/password/change')}}" class="nav-link {{ request()->is('account/password/change') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Change Password</p>
                   </a>
                 </li>
                 
                 <li class="nav-item">
-                  <a href="{{url('logout')}}" class="nav-link">
+                  <a href="{{url('account/logout')}}" class="nav-link">
                     <i class="nav-icon fas fa-door-closed"></i>
 
                     <p>

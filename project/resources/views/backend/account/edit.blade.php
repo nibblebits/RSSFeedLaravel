@@ -1,4 +1,4 @@
-@section('title', 'Changing Password')
+@section('title', 'Edit Account Details')
 @include('backend/include/header')
 
 <!-- Content Wrapper. Contains page content -->
@@ -12,7 +12,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{url('home')}}">Home</a></li>
-            <li class="breadcrumb-item active">Change Password</li>
+            <li class="breadcrumb-item active"><a href="javascript:void()">Edit Account</a></li>
 
           </ol>
         </div>
@@ -33,26 +33,16 @@
 
           <div class="row">
             <div class="col-md-6">
-              <form action="{{url('account/password/change')}}" method="POST">
+              <form action="{{url('account/edit')}}" method="POST">
                 {{ csrf_field() }}
-                <h1>Changing Password</h1>
+                <h1>Edit Your Account</h1>
                 <div class="form-group">
-                  <label>New Password</label>
-                  <input type="password" class="form-control" name="password" />
-                  <p class="text-danger">
-                    {{$errors->first('password')}}
-                  </p>
-                </div>
-                <div class="form-group">
-                  <label>Confirm</label>
-                  <input type="password" class="form-control" name="password_confirmation" />
-                  <p class="text-danger">
-                  {{$errors->first('confirm_password')}}
-                  </p>
-                </div>
-                <div class="form-group">
-                  <input type="submit" class="btn btn-primary" value="Change Password" />
+                  <label>Name</label>
+                  <input type="text" class="form-control" name="name" value="{{old('name', Auth::user()->name)}}"/>
+                  <p class="text-danger">{{$errors->first('name')}}</p>
 
+                  <br />
+                  <input type="submit" class="btn btn-primary" value="Update" />
                 </div>
               </form>
             </div>

@@ -1,5 +1,5 @@
 @section('title', 'World News Happening Right Now')
-@include('home/include/header')
+@include('frontend/include/header')
 
 
 
@@ -33,4 +33,4 @@
 
 </div>
 
-@include('home/include/footer')
+@include('frontend/include/footer')
