@@ -20,6 +20,8 @@ Route::get('/account', 'Backend\HomeController@index');
 Route::get('/account/dashboard', 'Backend\HomeController@dashboard');
 Route::get('/account/edit', 'Backend\EditAccountController@index');
 Route::post('/account/edit', 'Backend\EditAccountController@store');
+Route::get('/manage/news', 'Backend\Staff\NewsController@index');
+
 
 // Login Controller
 Route::get('login', 'Auth\LoginController@index')->name('login');
@@ -35,12 +37,12 @@ Route::get('/account/password/change', 'Auth\ChangePasswordController@index');
 Route::post('/account/password/change', 'Auth\ChangePasswordController@store');
 
 // Administrator
-Route::get('/users', 'Backend\Administrator\UsersController@index');
-Route::get('/user/{user}', 'Backend\Administrator\UsersController@view');
-Route::get('/user/{user}/change_password', 'Backend\Administrator\UsersController@change_password');
-Route::post('/user/{user}/change_password', 'Backend\Administrator\UsersController@change_password_submit');
-Route::post('/user/{user}/ban', 'Backend\Administrator\UsersController@ban_user');
-Route::post('/user/{user}/unban', 'Backend\Administrator\UsersController@unban_user');
+Route::get('/users', 'Backend\Staff\Administrator\UsersController@index');
+Route::get('/user/{user}', 'Backend\Staff\Administrator\UsersController@view');
+Route::get('/user/{user}/change_password', 'Backend\Staff\Administrator\UsersController@change_password');
+Route::post('/user/{user}/change_password', 'Backend\Staff\Administrator\UsersController@change_password_submit');
+Route::post('/user/{user}/ban', 'Backend\Staff\Administrator\UsersController@ban_user');
+Route::post('/user/{user}/unban', 'Backend\Staff\Administrator\UsersController@unban_user');
 
-Route::post('admin/login_to_account', 'Backend\Administrator\UsersController@login_to_account');
-Route::post('admin/restore_to_admin', 'Backend\Administrator\ReturnToAdminController@restore_to_admin');
+Route::post('admin/login_to_account', 'Backend\Staff\Administrator\UsersController@login_to_account');
+Route::post('admin/restore_to_admin', 'Backend\Staff\Administrator\ReturnToAdminController@restore_to_admin');

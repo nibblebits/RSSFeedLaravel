@@ -29,8 +29,11 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+  <!-- jQuery -->
+  <script src="{{url('/plugins/jquery/jquery.min.js')}}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{{url('/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 
-  
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -180,7 +183,7 @@
               </a>
               <ul class="nav nav-treeview">
 
-              <li class="nav-item">
+                <li class="nav-item">
                   <a href="{{url('/account/dashboard')}}" class="nav-link {{ request()->is('account/dashboard') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard</p>
@@ -195,6 +198,12 @@
                 </li>
 
                 <li class="nav-item">
+                  <a href="{{url('/manage/news')}}" class="nav-link {{ request()->is('manage/news') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>News</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="{{url('/users')}}" class="nav-link {{ request()->is('users') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Users</p>
@@ -207,7 +216,7 @@
                     <p>Change Password</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a href="{{url('account/logout')}}" class="nav-link">
                     <i class="nav-icon fas fa-door-closed"></i>

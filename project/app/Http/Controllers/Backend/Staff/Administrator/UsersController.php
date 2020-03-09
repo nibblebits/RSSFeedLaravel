@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Administrator;
+namespace App\Http\Controllers\Backend\Staff\Administrator;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,13 +29,13 @@ class UsersController extends Controller
         $query = $request->get('query');
         $users = Auth::user()->orderBy('created_at', 'desc')->where('name', 'like', '%' . $query . '%')
                     ->orWhere('email', 'like', '%' . $query . '%')->paginate(10);
-        return view('backend.admin.user.users', compact('users'));
+        return view('backend.staff.admin.user.users', compact('users'));
     }
 
 
     public function view(User $user)
     {
-        return view('backend.admin.user.user', compact('user'));
+        return view('backend.staff.admin.user.user', compact('user'));
     }
 
     public function ban_user(User $user)
@@ -55,7 +55,7 @@ class UsersController extends Controller
 
     public function change_password(User $user)
     {
-        return view('backend.admin.user.change_password', compact('user'));
+        return view('backend.staff.admin.user.change_password', compact('user'));
     }
 
     public function change_password_submit(User $user, AdminChangePasswordRequest $request)

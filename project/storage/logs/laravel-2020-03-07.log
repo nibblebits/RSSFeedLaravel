@@ -63,12 +63,12 @@
 #28 /home/daniel/RSSFeedNewsWebsite/project/server.php(21): require_once('/home/daniel/RS...')
 #29 {main}
 "} 
-[2020-03-07 20:46:38] local.ERROR: View [dbackend.admin.user.change_password] not found. {"userId":1,"exception":"[object] (InvalidArgumentException(code: 0): View [dbackend.admin.user.change_password] not found. at /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:137)
+[2020-03-07 20:46:38] local.ERROR: View [dbackend.staff.admin.user.change_password] not found. {"userId":1,"exception":"[object] (InvalidArgumentException(code: 0): View [dbackend.staff.admin.user.change_password] not found. at /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:137)
 [stacktrace]
-#0 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('dbackend.admin....', Array)
-#1 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/View/Factory.php(131): Illuminate\\View\\FileViewFinder->find('dbackend.admin....')
-#2 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(975): Illuminate\\View\\Factory->make('dbackend.admin....', Array, Array)
-#3 /home/daniel/RSSFeedNewsWebsite/project/app/Http/Controllers/Backend/Administrator/UsersController.php(57): view('dbackend.admin....', Array)
+#0 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('dbackend.staff.admin....', Array)
+#1 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/View/Factory.php(131): Illuminate\\View\\FileViewFinder->find('dbackend.staff.admin....')
+#2 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(975): Illuminate\\View\\Factory->make('dbackend.staff.admin....', Array, Array)
+#3 /home/daniel/RSSFeedNewsWebsite/project/app/Http/Controllers/Backend/Administrator/UsersController.php(57): view('dbackend.staff.admin....', Array)
 #4 [internal function]: App\\Http\\Controllers\\Backend\\Administrator\\UsersController->change_password(Object(App\\User))
 #5 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
 #6 /home/daniel/RSSFeedNewsWebsite/project/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('change_password', Array)

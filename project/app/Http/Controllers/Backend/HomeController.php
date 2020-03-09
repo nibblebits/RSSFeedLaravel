@@ -37,14 +37,4 @@ class HomeController extends Controller
         return view('backend.dashboard');
     }
 
-
-    /**
-     * Stores updated profile information
-     */
-    public function update(EditProfileRequest $request)
-    {
-        Auth::user()->update($request->only(['name']));
-        return Redirect::to("edit")->withSuccess('Profile Updated!')->withInput();
-    }
-
 }
