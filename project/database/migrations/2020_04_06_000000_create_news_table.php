@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateNewsTable extends Migration
@@ -17,8 +18,8 @@ class CreateNewsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('description');
-            $table->string('image_url');
-            $table->datetime('article_dated');
+            $table->string('image_url')->default();
+            $table->datetime('article_dated')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('url')->unique();
             $table->timestamps();
         });

@@ -21,6 +21,8 @@ Route::get('/account/dashboard', 'Backend\HomeController@dashboard');
 Route::get('/account/edit', 'Backend\EditAccountController@index');
 Route::post('/account/edit', 'Backend\EditAccountController@store');
 Route::get('/manage/news', 'Backend\Staff\NewsController@index');
+Route::get('/manage/news/create', 'Backend\Staff\NewsController@create');
+Route::post('/manage/news/create', 'Backend\Staff\NewsController@store');
 
 
 // Login Controller

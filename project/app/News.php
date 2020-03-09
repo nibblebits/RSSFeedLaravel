@@ -10,5 +10,11 @@ class News extends Model
         'title','description', 'image_url', 'article_dated', 'url'
     ];
     
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\NewsCategory');
+    }
+
     
 }

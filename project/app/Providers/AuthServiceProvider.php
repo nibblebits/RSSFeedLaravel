@@ -29,6 +29,8 @@ class AuthServiceProvider extends ServiceProvider
             return $user->account_type == 'admin';
         });
 
-    
+        Gate::define('creation-of-news', function($user) {
+            return $user->account_type == 'admin';
+        });
     }
 }
