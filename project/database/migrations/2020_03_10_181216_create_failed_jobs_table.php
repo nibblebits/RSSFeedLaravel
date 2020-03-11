@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsCategoriesTable extends Migration
+class CreateFailedJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateNewsCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_categories', function (Blueprint $table) {
+        Schema::create('failed_jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->timestamps();
+            $table->text('connection');
+            $table->text('queue');
+            $table->longText('payload');
+            $table->longText('exception');
+            $table->timestamp('failed_at')->useCurrent();
         });
     }
 
@@ -27,6 +30,6 @@ class CreateNewsCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_categories');
+        Schema::dropIfExists('failed_jobs');
     }
 }

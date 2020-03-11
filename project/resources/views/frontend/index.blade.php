@@ -10,10 +10,11 @@
   <div class="mw-600 mx-auto mt-30 f-22 color-heading text-center text-adaptive" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
     Kiwi News Bring World News Combined Together Straight To You</div>
 
-  <div class="card-deck">
-    @foreach($news as $news_item)
+    @foreach($news->chunk(3) as $news_part)
+    <div class="card-deck">
+    @foreach($news_part as $news_item)
     <div class="card">
-      <img class="card-img-top" src="{{$news_item->image_url}}" alt="Card image cap">
+      <img class="card-img-top" src="{{$news_item->getImageUrl()}}" width="200" height="200" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{$news_item->title}}</h5>
         <p class="card-text">{{$news_item->description}}</p>
@@ -23,12 +24,13 @@
         </div>
       </div>
     </div>
+    @endforeach
+    </div>
 
     @endforeach
 
 
 
-  </div>
 
 
 </div>

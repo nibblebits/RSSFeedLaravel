@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\News;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Redirect;
+use Nibblebits\RssFeedReader\Exceptions\BadRssFeedException;
 
 class HomeController extends Controller
 {
@@ -22,7 +20,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $news = News::all();
+        $news = News::orderBy('article_dated', 'desc')->take(12)->get();
 
         return view('frontend.index', ['news' => $news]);
     }

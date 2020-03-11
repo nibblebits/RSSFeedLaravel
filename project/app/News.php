@@ -16,5 +16,10 @@ class News extends Model
         return $this->belongsToMany('App\NewsCategory');
     }
 
+    public function getImageUrl()
+    {
+        return $this->image_url ? $this->image_url : url('images/no-image.png');
+    }
+
     
 }
