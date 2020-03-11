@@ -49,7 +49,7 @@ class PullRss implements ShouldQueue
 
         // Let's update the RSS feed title, description and image so our records are up to date
         $this->feed->name = $channel->getTitle();
-        $this->feed->description = $channel->getDescription();
+        $this->feed->description = substr(strip_tags($channel->getDescription()), 0, 255);
         $this->feed->image_url = $channel->getImage()->getUrl();
         $this->feed->save();
 
@@ -64,8 +64,8 @@ class PullRss implements ShouldQueue
             }
 
             $news = new News();
-            $news->title = $item->getTitle();
-            $news->description = $item->getDescription();
+            $news->title = strip_tags($item->getTitle());
+            $news->description = substr(strip_tags($item->getDescription()), 0, 255);
             $article_image = $item->fetchArticleImage();
             if ($article_image)
             {

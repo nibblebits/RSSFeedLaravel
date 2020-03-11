@@ -203,6 +203,14 @@
                     <p>News</p>
                   </a>
                 </li>
+
+                <li class="nav-item">
+                  <a href="{{url('/manage/rss')}}" class="nav-link {{ request()->is('manage/rss') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>RSS Feeds</p>
+                  </a>
+                </li>
+
                 <li class="nav-item">
                   <a href="{{url('/users')}}" class="nav-link {{ request()->is('users') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>

@@ -45,13 +45,8 @@ class NewsController extends Controller
         }
 
 
-        $news = $news->orderBy('created_at', 'desc')->paginate(10);
+        $news = $news->orderBy('article_dated', 'desc')->paginate(10);
         return view('backend.staff.news.home', ['news' => $news, 'categories' => $categories]);
-    }
-
-    public function dashboard()
-    {
-        return view('backend.dashboard');
     }
 
     /**
