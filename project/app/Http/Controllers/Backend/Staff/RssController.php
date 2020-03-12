@@ -8,6 +8,7 @@ use App\Jobs\PullRss;
 use App\NewsCategory;
 use App\RssFeed;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class RssController extends Controller
 {
@@ -41,12 +42,14 @@ class RssController extends Controller
     {
         $rss_feed = RssFeed::create($request->only(['url', $request->url]));
         PullRss::dispatch($rss_feed);
+        
+        foreach($request->categories as $category)
+        {
+            $rss_feed->categories()->attach($category);
+        }
+
         return Redirect::to('manage/rss')->withSuccess('Rss item added!')->withInput();
 
-       // foreach($request->categories as $category)
-        //{
-         //   $news->categories()->attach($category);
-        //}
     }
  
 }

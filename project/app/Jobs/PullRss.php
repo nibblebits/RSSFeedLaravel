@@ -74,6 +74,12 @@ class PullRss implements ShouldQueue
             $news->article_dated = date('Y-m-d H:i:s', strtotime($item->getDated()));
             $news->url = $url;
             $news->save();
+            
+            // Let's add the news to all the categories the RSS feed is bound to
+            foreach($this->feed->categories as $category)
+            {                
+                $news->categories()->attach($category);
+            }
         }
 
         $this->feed->processing_state = 'processed';

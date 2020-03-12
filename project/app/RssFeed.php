@@ -10,6 +10,12 @@ class RssFeed extends Model
         'name','description', 'image_url', 'url', 'processing_state'
     ];
 
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\NewsCategory');
+    }
+    
     public function getImageUrl()
     {
         return $this->image_url ? $this->image_url : url('images/no-image.png');

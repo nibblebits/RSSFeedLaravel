@@ -24,7 +24,8 @@ class CreateRssFeedRequest extends FormRequest
     public function rules()
     {
         return [
-            'url' => 'required|url|unique:rss_feeds'
+            'url' => 'required|url|unique:rss_feeds',
+            'categories' => 'required'
         ];
     }
 }

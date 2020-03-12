@@ -15,4 +15,9 @@ class NewsCategory extends Model
     {
         return $this->belongsToMany('App\News');
     }
+
+    public function rss_feeds()
+    {
+        return $this->belongsToMany('App\RssFeed');
+    }
 }
