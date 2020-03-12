@@ -36,7 +36,7 @@ class NewsController extends Controller
         $news = new News();
         if ($category != '') {
             // We are filtering by a category here, lets change the news we get
-            $news = NewsCategory::where('id', $category)->first()->news();
+            $news = NewsCategory::findOrFail($category)->news();
         }
 
         if ($query != '') {

@@ -56,7 +56,7 @@
                     <select name="category" id="category" class="form-control">
                       <option value="">Show All Categories</option>
                       @foreach($categories as $category)
-                        <option value="{{$category->id}}" {{app('request')->input('category') ? 'selected' : ''}} >Show Only {{$category->name}}</option>
+                        <option value="{{$category->id}}" {{app('request')->input('category') == $category->id ? 'selected' : ''}} >Show Only {{$category->name}}</option>
                       @endforeach
                     </select>
                   </div>
