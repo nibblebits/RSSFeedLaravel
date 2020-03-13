@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateNewNewsItemRequest extends FormRequest
+class UpdateRssFeedRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreateNewNewsItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return \Gate::allows('creation-of-news');
+        return \Gate::allows('creation-of-rss-feeds');
     }
 
     /**
@@ -24,10 +24,6 @@ class CreateNewNewsItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5|max:255',
-            'description' => 'required|min:20|max:255',
-            'url' => 'required|url|max:255|unique:news',
-            'image_url' => 'required|url|max:255',
             'categories' => 'required'
         ];
     }

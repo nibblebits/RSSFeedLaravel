@@ -63,7 +63,7 @@ class NewsController extends Controller
      */
     public function store(CreateNewNewsItemRequest $request)
     {
-        $news = News::create($request->only(['title', 'description', 'url']));
+        $news = News::create($request->only(['title', 'description', 'url', 'image_url']));
         foreach($request->categories as $category)
         {
             $news->categories()->attach($category);
@@ -71,12 +71,5 @@ class NewsController extends Controller
         return Redirect::to('manage/news')->withSuccess('News item added!')->withInput();
     }
 
-    /**
-     * Stores updated profile information
-     */
-    public function update(EditProfileRequest $request)
-    {
-        Auth::user()->update($request->only(['name']));
-        return Redirect::to("edit")->withSuccess('Profile Updated!')->withInput();
-    }
+
 }

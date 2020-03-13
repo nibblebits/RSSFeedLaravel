@@ -65,7 +65,7 @@
 
                   @foreach($rss_feeds as $rss_feed)
                   <tr>
-                    <td><a href="#">{{$rss_feed->name}}</a></td>
+                    <td><a href="{{url('manage/rss/' . $rss_feed->id . '/edit')}}">{{$rss_feed->name}}</a></td>
                     <td>{{substr($rss_feed->description, 0, 120)}}</td>
                     <td><img src="{{substr($rss_feed->getImageUrl(), 0, 120)}}" width="200" height="100"/></td>
                     @if($rss_feed->processing_state == 'processed')
@@ -79,7 +79,7 @@
 
                     @endif
                     <td><a href="{{$rss_feed->url}}" target="_new"><i class="fas fa-eye"></a></td>
-                    <td><a href="#"><i class="fas fa-hammer"></a></td>
+                    <td><a href="{{url('manage/rss/' . $rss_feed->id . '/edit')}}"><i class="fas fa-edit"></a></td>
                   </tr>
                   @endforeach
 

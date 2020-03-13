@@ -60,6 +60,14 @@
                 </div>
 
                 <div class="form-group">
+                  <label>Image URL</label>
+                  <input type="text" class="form-control" name="image_url" value="{{old('image_url')}}" />
+                  <p class="text-danger">
+                    {{$errors->first('image_url')}}
+                  </p>
+                </div>
+
+                <div class="form-group">
                   <label>Categories</label>
                   <select name="categories[]" id="categories" multiple class="form-control">
                     @foreach($categories as $category)

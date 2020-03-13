@@ -16,6 +16,7 @@
 Route::get('/', 'HomeController@index');
 
 // The backend 
+Route::get('/home', 'Backend\HomeController@index');
 Route::get('/account', 'Backend\HomeController@index');
 Route::get('/account/dashboard', 'Backend\HomeController@dashboard');
 Route::get('/account/edit', 'Backend\EditAccountController@index');
@@ -26,6 +27,9 @@ Route::post('/manage/news/create', 'Backend\Staff\NewsController@store');
 Route::get('/manage/rss', 'Backend\Staff\RssController@index');
 Route::get('/manage/rss/create', 'Backend\Staff\RssController@create');
 Route::post('/manage/rss/create', 'Backend\Staff\RssController@store');
+Route::get('/manage/rss/{rss_feed}/edit', 'Backend\Staff\RssController@edit');
+Route::post('/manage/rss/{rss_feed}/edit', 'Backend\Staff\RssController@update');
+Route::delete('/manage/rss/{rss_feed}/edit', 'Backend\Staff\RssController@delete');
 
 
 // Login Controller
