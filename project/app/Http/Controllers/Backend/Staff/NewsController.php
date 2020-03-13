@@ -66,6 +66,14 @@ class NewsController extends Controller
         $news->load('categories');
         return view('backend.staff.news.edit', ['news' => $news, 'categories' => $categories]);
     }
+    
+    public function delete(News $news)
+    {
+        $news->categories()->detach();
+        $news->delete();
+        return Redirect::to('manage/news')->withSuccess('News item deleted');
+    }
+
 
     public function update(News $news, UpdateNewsRequest $request)
     {

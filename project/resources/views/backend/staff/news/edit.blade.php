@@ -35,6 +35,12 @@
 
           <div class="row">
             <div class="col-md-6">
+
+              <form id="delete_form" action="{{url('manage/news/' . $news->id . '/edit')}}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+              </form>
+
               <form action="{{url('manage/news/' . $news->id . '/edit')}}" method="POST">
                 {{ csrf_field() }}
                 <h1>{{$news->title}}</h1>
@@ -84,6 +90,7 @@
 
                 <div class="form-group">
                   <input type="submit" class="btn btn-primary" value="Update" />
+                  <button type="button" class="btn btn-danger" onclick="deleteItem();"><i class="far fa-trash-alt"></i></button>
 
                 </div>
               </form>
@@ -97,5 +104,15 @@
   </section>
   <!-- /.content -->
 </div>
+
+
+<script>
+  function deleteItem() {
+    var c = confirm('Are you sure you wish to delete this RSS feed?');
+    if (c) {
+      $('#delete_form').submit();
+    }
+  }
+</script>
 
 @include('backend/include/footer')
