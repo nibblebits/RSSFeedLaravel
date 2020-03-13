@@ -24,6 +24,10 @@ Route::post('/account/edit', 'Backend\EditAccountController@store');
 Route::get('/manage/news', 'Backend\Staff\NewsController@index');
 Route::get('/manage/news/create', 'Backend\Staff\NewsController@create');
 Route::post('/manage/news/create', 'Backend\Staff\NewsController@store');
+Route::get('/manage/news/{news}/edit', 'Backend\Staff\NewsController@edit');
+Route::post('/manage/news/{news}/edit', 'Backend\Staff\NewsController@update');
+Route::delete('/manage/news/{news}/edit', 'Backend\Staff\NewsController@delete');
+
 Route::get('/manage/rss', 'Backend\Staff\RssController@index');
 Route::get('/manage/rss/create', 'Backend\Staff\RssController@create');
 Route::post('/manage/rss/create', 'Backend\Staff\RssController@store');

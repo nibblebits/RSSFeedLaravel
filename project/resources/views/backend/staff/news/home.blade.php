@@ -79,7 +79,7 @@
 
                   @foreach($news as $news_item)
                   <tr>
-                    <td><a href="#">{{$news_item->title}}</a></td>
+                    <td><a href="{{url('manage/news/' . $news_item->id . '/edit')}}">{{$news_item->title}}</a></td>
                     <td>{{substr($news_item->description, 0, 120)}}</td>
                     <td><a href="#"><i class="fas fa-hammer"></a></td>
                   </tr>

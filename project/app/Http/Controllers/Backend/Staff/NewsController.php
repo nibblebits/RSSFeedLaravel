@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Staff;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateNewNewsItemRequest;
 use App\Http\Requests\EditProfileRequest;
+use App\Http\Requests\UpdateNewsRequest;
 use App\News;
 use App\NewsCategory;
 use Illuminate\Http\Request;
@@ -58,6 +59,28 @@ class NewsController extends Controller
         return view('backend.staff.news.create', ['categories' => $categories]);
     }
 
+
+    public function edit(News $news)
+    {
+        $categories = NewsCategory::all();
+        $news->load('categories');
+        return view('backend.staff.news.edit', ['news' => $news, 'categories' => $categories]);
+    }
+
+    public function update(News $news, UpdateNewsRequest $request)
+    {
+        $news->update($request->only(['title', 'description', 'url', 'image_url']));
+        $news->categories()->detach();
+        foreach($request->categories as $category)
+        {
+            $news->categories()->attach($category);
+        }
+
+        return Redirect::to('manage/news')->withSuccess('Updated succesfully');
+    }
+
+
+    
     /**
      * Stores the new news item
      */
