@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('account_type', 30);
+            $table->tinyInteger('banned')->default(0);
             $table->bigInteger('category');
             $table->rememberToken();
             $table->timestamps();

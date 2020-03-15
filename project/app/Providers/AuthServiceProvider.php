@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        /**
+         * In a better implementation we could check for user roles here instead,
+         * user roles do not exist yet
+         */
         Gate::define('change-user-password', function ($user) {
             return $user->account_type == 'admin';
         });
@@ -36,5 +40,15 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('creation-of-rss-feeds', function($user) {
             return $user->account_type == 'admin';
         });
+
+        Gate::define('creation-of-categories', function($user) {
+            return $user->account_type == 'admin';
+        });
+
+
+        Gate::define('create-new-users', function($user) {
+            return $user->account_type == 'admin';
+        });
+
     }
 }

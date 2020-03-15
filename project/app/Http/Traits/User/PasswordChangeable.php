@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Hash;
 
 trait PasswordChangeable
 {
-    public function changePassword($new_password)
+    public function setPassword($new_password)
     {
         $this->password = Hash::make($new_password);
-        $this->save();
+        return $this;
     }
 }

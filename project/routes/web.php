@@ -34,6 +34,13 @@ Route::post('/manage/rss/create', 'Backend\Staff\RssController@store');
 Route::get('/manage/rss/{rss_feed}/edit', 'Backend\Staff\RssController@edit');
 Route::post('/manage/rss/{rss_feed}/edit', 'Backend\Staff\RssController@update');
 Route::delete('/manage/rss/{rss_feed}/edit', 'Backend\Staff\RssController@delete');
+Route::get('/manage/category/create', 'Backend\Staff\CategoryController@create');
+Route::post('/manage/category/create', 'Backend\Staff\CategoryController@store');
+
+Route::get('/manage/categories', 'Backend\Staff\CategoryController@index');
+Route::get('/manage/category/{news_category}/edit', 'Backend\Staff\CategoryController@edit');
+Route::post('/manage/category/{news_category}/edit', 'Backend\Staff\CategoryController@update');
+Route::delete('/manage/category/{news_category}/edit', 'Backend\Staff\CategoryController@delete');
 
 
 // Login Controller
@@ -56,6 +63,8 @@ Route::get('/user/{user}/change_password', 'Backend\Staff\Administrator\UsersCon
 Route::post('/user/{user}/change_password', 'Backend\Staff\Administrator\UsersController@change_password_submit');
 Route::post('/user/{user}/ban', 'Backend\Staff\Administrator\UsersController@ban_user');
 Route::post('/user/{user}/unban', 'Backend\Staff\Administrator\UsersController@unban_user');
+Route::get('/users/create', 'Backend\Staff\Administrator\UsersController@create');
+Route::post('/users/create', 'Backend\Staff\Administrator\UsersController@store');
 
 Route::post('admin/login_to_account', 'Backend\Staff\Administrator\UsersController@login_to_account');
 Route::post('admin/restore_to_admin', 'Backend\Staff\Administrator\ReturnToAdminController@restore_to_admin');

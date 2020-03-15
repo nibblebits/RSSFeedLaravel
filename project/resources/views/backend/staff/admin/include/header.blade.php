@@ -204,6 +204,15 @@
                   </a>
                 </li>
 
+
+                <li class="nav-item">
+                  <a href="{{url('/manage/categories')}}" class="nav-link {{ request()->is('manage/categories') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Categories</p>
+                  </a>
+                </li>
+
+
                 <li class="nav-item">
                   <a href="{{url('/manage/rss')}}" class="nav-link {{ request()->is('manage/rss') ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>

@@ -57,10 +57,6 @@
               <p>
                 Email: <a href="mailto:{{$user->email}}">{{$user->email}}</a>
               </p>
-              <p>
-                Telephone: <a href="tel:{{$user->telephone}}">{{$user->telephone}}</a>
-              </p>
-
               <form action="{{url('admin/login_to_account')}}" method="POST">
                 {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{$user->id}}" />

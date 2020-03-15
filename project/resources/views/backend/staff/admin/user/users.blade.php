@@ -9,6 +9,8 @@
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1>Users</h1>
+          <a href="{{url('users/create')}}" class="btn btn-primary">Create New</a>
+
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -36,6 +38,8 @@
        <h1>{{$errors->first()}}</h1>
      </div>
    @endif
+
+
 
       <!-- /.row -->
       <div class="row">

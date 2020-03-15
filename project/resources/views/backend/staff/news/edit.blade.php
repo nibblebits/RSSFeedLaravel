@@ -108,7 +108,7 @@
 
 <script>
   function deleteItem() {
-    var c = confirm('Are you sure you wish to delete this RSS feed?');
+    var c = confirm('Are you sure you wish to delete this news item?');
     if (c) {
       $('#delete_form').submit();
     }

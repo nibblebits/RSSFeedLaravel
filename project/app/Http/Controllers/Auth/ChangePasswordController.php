@@ -36,7 +36,7 @@ class ChangePasswordController extends Controller
 
     public function store(ChangePasswordRequest $request)
     {        
-        Auth::user()->changePassword($request->password);
+        Auth::user()->setPassword($request->password)->save();
 
         return back()->withSuccess('Password was changed')->withInput();
 
