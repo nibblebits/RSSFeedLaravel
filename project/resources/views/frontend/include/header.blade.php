@@ -31,25 +31,16 @@
     <a href="#" class="close_menu color-white"><i class="fas fa-times"></i></a>
     <div class="px-40 pt-60 pb-60 inner">
       <div class="logo color-white mb-30">{{ config('app.name') }} </div>
-      <div><a href="#" class="f-heading f-22 link color-white mb-20">Home</a></div>
-      <div><a href="#" class="f-heading f-22 link color-white mb-20">Tour</a></div>
-      <div><a href="#" class="f-heading f-22 link color-white mb-20">Mobile Apps</a></div>
-      <div><a href="#" class="f-heading f-22 link color-white mb-20">Pricing</a></div>
-      <div><a href="#" class="f-heading f-22 link color-white mb-20">Development</a></div>
-      <div><a href="#" class="link color-white op-3 mb-15">Help</a></div>
-      <div><a href="#" class="link color-white op-3 mb-15">F.A.Q.</a></div>
-      <div><a href="#" class="link color-white op-3 mb-15">Support</a></div>
-      <div><a href="#" class="link color-white op-3 mb-15">About Us</a></div>
-      <div><a href="#" class="link color-white op-3 mb-15">Blog</a></div>
-      <div><a href="#" class="link color-white op-3 mb-15">Careers</a></div>
+      <div><a href="{{url('/')}}" class="f-heading f-22 link color-white mb-20">Home</a></div>
+      <div><a href="{{url('news/latest')}}" class="f-heading f-22 link color-white mb-20">Latest News</a></div>
+      <div><a href="javascript:void();" class="f-heading f-22 link color-white mb-20">Categories</a></div>
+      @foreach($categories as $category)
+      <div><a href="{{url('news/category/' . $category->id)}}" class="link color-white op-3 mb-15">{{$category->name}}</a></div>
+      @endforeach
 
-      <div class="socials mt-40">
-        <a href="#" target="_blank" class="link color-white f-18 mr-20"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank" class="link color-white f-18 mr-20"><i class="fab fa-facebook"></i></a>
-        <a href="#" target="_blank" class="link color-white f-18 mr-20"><i class="fab fa-google-plus-g"></i></a>
-      </div>
 
-      <div class="mt-50 f-14 light color-white op-3 copy">&copy; 2020 Designmodo. All rights reserved.</div>
+
+      <div class="mt-50 f-14 light color-white op-3 copy">&copy; {{date('Y')}} {{config('app.name')}}. All rights reserved.</div>
     </div>
   </div>
   <!-- Header 1 -->
