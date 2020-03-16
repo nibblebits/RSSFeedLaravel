@@ -14,7 +14,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('home')}}">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="{{url('user/')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div>
             </div>
@@ -68,21 +68,20 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'News Extracted');
+        data.addColumn('number', 'Total');
         data.addRows([
-            ['Mushrooms', 3],
-            ['Onions', 1],
-            ['Olives', 1],
-            ['Zucchini', 1],
-            ['Pepperoni', 2]
+            @foreach($rss_feeds as $rss_feed)
+            ['{{addslashes($rss_feed->name)}}', {{$rss_feed->total_news_extracted}}],
+            @endforeach
+    
         ]);
 
         // Set chart options
         var options = {
-            'title': 'How Much Pizza I Ate Last Night',
-            'width': 400,
-            'height': 300
+            'title': 'RSS Feed Extracted News',
+            'width': 800,
+            'height': 600
         };
 
         // Instantiate and draw our chart, passing in some options.

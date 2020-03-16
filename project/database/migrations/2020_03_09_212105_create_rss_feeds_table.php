@@ -19,7 +19,8 @@ class CreateRssFeedsTable extends Migration
             $table->string('description')->default('Waiting for first poll');
             $table->string('image_url')->nullable();
             $table->string('url');
-            $table->string('processing_state', 20)->default('waiting');  
+            $table->string('processing_state', 20)->default('waiting'); 
+            $table->integer('total_news_extracted')->default(0); 
             $table->timestamps();
         });
     }

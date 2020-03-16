@@ -3,13 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EditProfileRequest;
-use Illuminate\Http\Request;
+use App\RssFeed;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Hash;
 
 
 class HomeController extends Controller
@@ -34,7 +30,13 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('backend.dashboard');
+        $rss_feeds = RssFeed::all();
+        return view('backend.dashboard', ['rss_feeds' => $rss_feeds]);
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to('/')->withSuccess('You have logged out')->withInput();
+    }
 }

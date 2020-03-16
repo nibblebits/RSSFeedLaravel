@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Jobs\PullRss;
 use App\RssFeed;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class PollRss extends Command
 {
@@ -39,6 +40,9 @@ class PollRss extends Command
      */
     public function handle()
     {
+        // Mark all rss feeds as waiting
+        DB::table('rss_feeds')->update(['processing_state' => 'waiting']);
+
         $rss_feeds = RssFeed::all();
         foreach($rss_feeds as $rss_feed)
         {

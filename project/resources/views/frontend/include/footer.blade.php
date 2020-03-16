@@ -1,37 +1,7 @@
 
-    <div class="container" style="padding-top:100px;">
-      <div class="mb-3 logo d-block d-xl-none text-center logo_mobile">Kiwi News</div>
-      <h1 class="big text-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Subscribe</h1>
-      <div class="mw-600 mx-auto mt-30 f-22 color-heading text-center text-adaptive" data-aos-duration="600"
-        data-aos="fade-down" data-aos-delay="300">
-        Subscribe and get daily mail regarding global news</div>
-
-        <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <a href="https://google.com" class="btn lg action-1">Subscribe</a>
-          </form>
-    </div>
+   
   </header>
-  <!-- forms alerts -->
-  <div class="alert alert-success alert-dismissible fixed-top alert-form-success" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-        aria-hidden="true">&times;</span></button>
-    Thanks for your message!
-  </div>
-  <div class="alert alert-warning alert-dismissible fixed-top alert-form-check-fields" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-        aria-hidden="true">&times;</span></button>
-    Please, fill in required fields.
-  </div>
-  <div class="alert alert-danger alert-dismissible fixed-top alert-form-error" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-        aria-hidden="true">&times;</span></button>
-    An error occurred while sending data :(
-  </div>
+
 
   <!-- Bootstrap 4.3.1 JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>

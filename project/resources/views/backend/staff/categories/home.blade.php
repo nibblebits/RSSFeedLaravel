@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>News</h1>
+          <h1>Categories</h1>
           <a href="{{url('manage/category/create')}}" class="btn btn-primary">Create New</a>
         </div>
         <div class="col-sm-6">

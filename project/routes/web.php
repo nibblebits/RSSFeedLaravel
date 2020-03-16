@@ -15,6 +15,12 @@
 // Home controller
 Route::get('/', 'HomeController@index');
 
+
+// News Controller
+Route::get('/news/category/{category}', 'NewsController@category');
+Route::get('/news/latest', 'NewsController@latest');
+
+
 // The backend 
 Route::get('/home', 'Backend\HomeController@index');
 Route::get('/account', 'Backend\HomeController@index');
@@ -50,6 +56,10 @@ Route::post('login', 'Auth\LoginController@login');
 // Forgot Password Controller
 Route::get('forgot', 'Auth\ForgotPasswordController@index');
 Route::post('forgot', 'Auth\ForgotPasswordController@submit');
+
+
+// Logout
+Route::get('account/logout', 'Backend\HomeController@logout');
 
 
 // Password Controller

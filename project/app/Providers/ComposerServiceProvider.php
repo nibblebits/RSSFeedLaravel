@@ -25,6 +25,11 @@ class ComposerServiceProvider extends ServiceProvider
     {
 
         view()->composer(
+            'frontend.*',
+            'App\Http\ViewComposers\FrontendComposer'
+        );
+
+        view()->composer(
             'backend.*',
             'App\Http\ViewComposers\DashboardComposer'
         );
